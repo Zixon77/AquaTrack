@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "aqua-track",
+    "slug": "aqua-track",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "aqua-track"
+}
