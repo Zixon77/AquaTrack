@@ -14,7 +14,7 @@ const LastEntry = () => {
 
   return (
     <View style = {styles.container}>
-      <Text style = {styles.header}>Last Log:</Text>
+      <Text style = {styles.header}>Last Log</Text>
       <Text style = {styles.time}>{store.addTime}</Text>
       <Text style = {styles.amount}>{store.addWater} fl oz</Text>
     </View>

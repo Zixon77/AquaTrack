@@ -6,7 +6,10 @@ import LastEntry from '../components/Main/LastEntry'
 import Water from '../components/Main/Water'
 import Cups from '../components/Main/Cups'
 import colors from '../assets/colors'
+import Tip from '../components/Main/Tip'
 import { Icon } from '@rneui/themed'
+
+//Add: Daily tip, change goal, amount of cups
 const Main = () => {
   return (
     <>
@@ -22,7 +25,7 @@ const Main = () => {
           <Cups/>
           <View style =  {styles.column}>
             <LastEntry/>
-            <LastEntry/>
+            <Tip/>
           </View>
         </View>
     </View>
@@ -62,8 +65,8 @@ const styles = StyleSheet.create({
   },
   settings:{
     position:"absolute",
-    top:"2%",
-    left:"0%",
+    top:"3.5%",
+    left:"1%",
     padding:"3%"
   }
 })
