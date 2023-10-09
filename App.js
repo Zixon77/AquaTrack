@@ -10,7 +10,7 @@ import colors from './src/assets/colors';
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
-//test
+//testt
 const MainStack = () =>{
   return(
     <Stack.Navigator initialRouteName='Main' screenOptions={{headerShown:false}}>
