@@ -16,7 +16,7 @@ export default Tip
 
 const styles = StyleSheet.create({
     container:{
-        width:"100%",
+        width:"92%",
         height:"45%",
         backgroundColor:colors.prusBlue,
         justifyContent:"center",
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         alignSelf:"flex-start",
         marginHorizontal:"5%",
-        width:'90%'
+        width:'95%'
       }
 })
