@@ -5,6 +5,7 @@ import fullDate from '../util/Main/getDate'
 import LastEntry from '../components/Main/LastEntry'
 import Water from '../components/Main/Water'
 import Cups from '../components/Main/Cups'
+import Goal from '../components/Main/Goal'
 import colors from '../assets/colors'
 import Tip from '../components/Main/Tip'
 import { Icon } from '@rneui/themed'
@@ -22,7 +23,10 @@ const Main = () => {
       <Text style = {styles.title}>{fullDate}</Text>
         <Water/>
         <View style = {styles.bottomHalf}>
-          <Cups/>
+          <View style =  {styles.column}>
+             <Goal/>
+            <Cups/>
+          </View>
           <View style =  {styles.column}>
             <LastEntry/>
             <Tip/>
@@ -51,17 +55,18 @@ const styles = StyleSheet.create({
   },
   bottomHalf:{
     flexDirection:"row",
-    justifyContent:'space-around',
     alignItems:"center",
-  //  borderWidth:1,
     width:"100%",
     height:'37%',
     marginTop:"5%",
+   // borderWidth:1
   },
   column:{
-  //  borderWidth:1,
     width:'50%',
-    height:"90%"
+    height:"90%",
+  //  borderWidth:1,
+    justifyContent:'center',
+    alignItems:"center",
   },
   settings:{
     position:"absolute",
