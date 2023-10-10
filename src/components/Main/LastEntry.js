@@ -25,7 +25,7 @@ export default LastEntry
 
 const styles = StyleSheet.create({
     container:{
-        width:"100%",
+        width:"92%",
         height:"45%",
         backgroundColor:colors.prusBlue,
         justifyContent:"center",
