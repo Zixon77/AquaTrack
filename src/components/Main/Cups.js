@@ -1,11 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React ,{useEffect, useState}from 'react'
 import colors from '../../assets/colors'
-
+import store from '../../util/store'
 const Cups = () => {
+
+  const[waterLeft,setleft] = useState(store.amountLeft)
+  useEffect(() =>{
+    setleft(store.amountFilled)
+  },[store.amountFilled])
+
   return (
     <View style = {styles.container}>
-      <Text>Cups</Text>
+      <Text style = {styles.header}>Cups {store.amountFilled}</Text>
+
     </View>
   )
 }
@@ -20,5 +27,13 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius:10,
+    },
+    header:{
+      color:colors.aero,
+      fontSize:20,
+      fontWeight:'bold',
+      alignSelf:"flex-start",
+      marginHorizontal:"5%",
+      marginBottom:"2%"
     },
 })
