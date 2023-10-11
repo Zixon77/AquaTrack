@@ -26,6 +26,7 @@ const Add = (props) => {
         placeholder='0'
         value={addAmount.toString()}
         onChangeText={text => setAddAmount(text)}
+        keyboardType='number-pad'
       />
       <TouchableOpacity style = {styles.button} activeOpacity={0.75} onPress={submit}>
         <Text style = {styles.buttonText}>Done</Text>

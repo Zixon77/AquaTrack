@@ -1,11 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React ,{useEffect, useState}from 'react'
 import colors from '../../assets/colors'
 import * as Progress from "react-native-progress"
 import store from '../../util/store'
 const Cups = () => {
+
+  const[waterLeft,setleft] = useState(store.amountLeft)
+  useEffect(() =>{
+    setleft(store.amountFilled)
+  },[store.amountFilled])
+
   return (
     <View style = {styles.container}>
+      <Text style = {styles.header}>Cups {store.amountFilled}</Text>
+
       <View style = {styles.progress}>
         <Progress.Bar 
         progress={0.25}
@@ -38,6 +46,14 @@ const styles = StyleSheet.create({
         borderRadius:10,
         marginVertical:"3%",
   
+    },
+    header:{
+      color:colors.aero,
+      fontSize:20,
+      fontWeight:'bold',
+      alignSelf:"flex-start",
+      marginHorizontal:"5%",
+      marginBottom:"2%"
     },
     progress:{
       justifyContent:"center",

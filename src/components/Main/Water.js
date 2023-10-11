@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite'
 import colors from '../../assets/colors'
 import {useNavigation} from "@react-navigation/native"
 
-
+//jijii
 const Water = observer(() => {
 
   const navigation = useNavigation();
