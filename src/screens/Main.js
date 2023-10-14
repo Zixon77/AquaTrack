@@ -9,16 +9,16 @@ import Goal from '../components/Main/Goal'
 import colors from '../assets/colors'
 import Tip from '../components/Main/Tip'
 import { Icon } from '@rneui/themed'
-
-//Add: Daily tip, change goal, amount of cups
+import { useNavigation } from '@react-navigation/native'
 const Main = () => {
+  const navigation = useNavigation()
   return (
     <>
    <SafeAreaView backgroundColor = {colors.polyBlue}/>
    <StatusBar style='light'/>
     <View style = {styles.container}>
-      <TouchableOpacity style = {styles.settings}>
-       <Icon name = "settings" color={colors.aero} size={35} />
+      <TouchableOpacity onPress={() => navigation.navigate("Settings")} style = {styles.settings}>
+        <Icon name = "settings" color={colors.aero} size={35} />
       </TouchableOpacity>
       <Text style = {styles.title}>{fullDate}</Text>
         <Water/>
@@ -47,11 +47,12 @@ const styles = StyleSheet.create({
     backgroundColor:colors.polyBlue,
   },
   title:{
-    fontSize:22,
+    fontSize:25,
     fontWeight:"bold",
-    marginVertical:'7%',
-    color:"white"
-
+    marginVertical:'6%',
+    marginBottom:'10%',
+    color:"white",
+    alignSelf:'center'
   },
   bottomHalf:{
     flexDirection:"row",
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   settings:{
     position:"absolute",
-    top:"3.5%",
+    top:"3%",
     left:"1%",
     padding:"3%"
   }

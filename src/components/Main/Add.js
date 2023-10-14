@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import store from '../../util/store'
 import colors from '../../assets/colors'
 import {useNavigation} from "@react-navigation/native"
-
+import { TouchableWithoutFeedback,Keyboard } from 'react-native'
 
 const Add = (props) => {
 
@@ -19,19 +19,22 @@ const Add = (props) => {
   return (
     <>
     <SafeAreaView backgroundColor = {colors.polyBlue}/>
-    <View style = {styles.container}>
-      <Text style = {styles.header}>Add Water</Text>
-      <TextInput
-        style = {styles.input}
-        placeholder='0'
-        value={addAmount.toString()}
-        onChangeText={text => setAddAmount(text)}
-        keyboardType='number-pad'
-      />
-      <TouchableOpacity style = {styles.button} activeOpacity={0.75} onPress={submit}>
-        <Text style = {styles.buttonText}>Done</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableWithoutFeedback onPress={ () => Keyboard.dismiss()}>
+        <View style = {styles.container}>
+          <Text style = {styles.header}>Add Water</Text>
+          <TextInput
+            style = {styles.input}
+            placeholder='0'
+            value={addAmount.toString()}
+            onChangeText={text => setAddAmount(text)}
+            keyboardType='number-pad'
+          />
+          <Button title = "back" onPress={() => navigation.goBack()}/>
+          <TouchableOpacity style = {styles.button} activeOpacity={0.75} onPress={submit}>
+            <Text style = {styles.buttonText}>Done</Text>
+          </TouchableOpacity>
+        </View>
+    </TouchableWithoutFeedback>
     </>
   )
 }

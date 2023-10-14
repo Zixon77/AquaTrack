@@ -12,8 +12,6 @@ const Cups = () => {
 
   return (
     <View style = {styles.container}>
-      <Text style = {styles.header}>Cups {store.amountFilled}</Text>
-
       <View style = {styles.progress}>
         <Progress.Bar 
         progress={0.25}
