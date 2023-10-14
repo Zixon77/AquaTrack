@@ -5,9 +5,9 @@ import { Icon } from '@rneui/base'
 const Option = (props) => {
   return (
     <View style = {styles.container}>
-        <Icon type={props.type} color = {colors.aero} size = {30} name = {props.name}/>
+        <Icon type={props.type} color = {colors.aero} size = {35} name = {props.name}/>
        <Text style = {styles.title}>{props.option}</Text>
-       <TouchableOpacity style = {{left:"500%"}}>
+       <TouchableOpacity style = {{position:"absolute",top:"10%",left:"90%"}}>
            <Icon color = {colors.aero} size = {30} name = "navigate-next"/>
        </TouchableOpacity>
     </View>
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
        borderColor:colors.cruseal,
        borderBottomWidth:0.5,
        width:"90%",
-       margin:"4%",
-       paddingBottom:"3%",
+       margin:"5%",
+       paddingBottom:"7%",
     },
     title:{
         color:colors.aero,

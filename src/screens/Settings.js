@@ -20,18 +20,16 @@ const Settings = () => {
   return (
     <View style = {styles.container}>
         <Text className = "text-3xl text-white font-bold">Settings</Text>
-        <TouchableOpacity style = {{position:"absolute",top:"9%",left:'20%'}} onPress={() => navigation.goBack()}>
+        <TouchableOpacity style = {{position:"absolute",top:"7.75%",left:'20%'}} onPress={() => navigation.goBack()}>
           <Icon name='arrow-back'color={colors.aero} size={40}/>
         </TouchableOpacity>
       <View style = {styles.ops}>
+        <Option type = "entypo" name = "home" option = "Profile"/>
+        <Option type = "entypo" name = "home" option = "Notifications"/>
         <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
+        <Option type = "entypo" name = "home" option = "Sync and Backup"/>
+        <Option type = "entypo" name = "home" option = "Export Data"/>
+        <Option type = "entypo" name = "home" option = "Feedback and Support"/>
       </View>
       <Text style =  {styles.version}>v1.0.0</Text>
     </View>
