@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import store from '../../util/store'
 import colors from '../../assets/colors'
@@ -13,11 +13,11 @@ const LastEntry = () => {
   },[])
 
   return (
-    <View style = {styles.container}>
+    <TouchableOpacity activeOpacity={0.75} style = {styles.container}>
       <Text style = {styles.header}>Last Log</Text>
       <Text style = {styles.time}>{store.addTime}</Text>
       <Text style = {styles.amount}>{store.addWater} fl oz</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
