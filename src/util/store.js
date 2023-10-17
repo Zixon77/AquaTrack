@@ -1,4 +1,4 @@
-import { makeObservable,makeAutoObservable } from "mobx";
+import { makeObservable,makeAutoObservable, action } from "mobx";
 
 class AppStore {
     constructor() {
@@ -9,8 +9,8 @@ class AppStore {
     addTime = new Date().toLocaleTimeString()
     addWater = 0;
     waterInputted = false;
+    temp = false;
     dailyGoal = 100;
-    amountFilled;
     amountCups = 0;
 
     storeTime(time) {
@@ -18,21 +18,26 @@ class AppStore {
     }
 
     storeAdd(water){
+      this.temp = true
       this.addWater = water;
-      console.log( this.addWater + ' water added')
       this.waterInputted = true
-      this.setCups()
       this.amountFilled = this.dailyGoal - this.addWater;
-      console.log(this.amountFilled + " left")
+      this.incrementCups(); 
     }
 
     makeFalse(){
       this.waterInputted = false;
     }
 
-    setCups(){
- 
+   @action
+  incrementCups() {
+    if (this.temp) {
+      this.amountCups += 1;
+      console.log('store: ' + this.amountCups); 
+      console.log(100-this.amountFilled)
     }
+    this.temp = false;
+  }
   }
   
   const store = new AppStore();

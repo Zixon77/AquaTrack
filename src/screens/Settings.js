@@ -24,12 +24,12 @@ const Settings = () => {
           <Icon name='arrow-back'color={colors.aero} size={40}/>
         </TouchableOpacity>
       <View style = {styles.ops}>
-        <Option type = "entypo" name = "home" option = "Profile"/>
-        <Option type = "entypo" name = "home" option = "Notifications"/>
-        <Option type = "entypo" name = "home" option = "Units"/>
-        <Option type = "entypo" name = "home" option = "Sync and Backup"/>
-        <Option type = "entypo" name = "home" option = "Export Data"/>
-        <Option type = "entypo" name = "home" option = "Feedback and Support"/>
+        <Option type = "ionicons" name = "person" option = "Profile"/>
+        <Option type = "ionicons" name = "notifications" option = "Notifications"/>
+        <Option type = "entypo" name ="ruler" option = "Units"/>
+        <Option type = "MaterialIcons" name = "backup" option = "Sync and Backup"/>
+        <Option type = "entypo" name = "export" option = "Export Data"/>
+        <Option type = "MaterialIcons" name = "contact-support" option = "Feedback and Support"/>
       </View>
       <Text style =  {styles.version}>v1.0.0</Text>
     </View>

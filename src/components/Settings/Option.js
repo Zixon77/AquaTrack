@@ -8,7 +8,7 @@ const Option = (props) => {
         <Icon type={props.type} color = {colors.aero} size = {35} name = {props.name}/>
        <Text style = {styles.title}>{props.option}</Text>
        <TouchableOpacity style = {{position:"absolute",top:"10%",left:"90%"}}>
-           <Icon color = {colors.aero} size = {30} name = "navigate-next"/>
+           <Icon color = {colors.aero} size = {30}  name = "navigate-next"/>
        </TouchableOpacity>
     </View>
   )

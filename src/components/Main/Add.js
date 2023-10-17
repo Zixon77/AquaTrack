@@ -5,6 +5,7 @@ import colors from '../../assets/colors'
 import {useNavigation} from "@react-navigation/native"
 import { TouchableWithoutFeedback,Keyboard } from 'react-native'
 import Portion from './Add/Portion'
+
 const Add = (props) => {
 
   const navigation = useNavigation();
@@ -19,7 +20,6 @@ const Add = (props) => {
     }
 
     const addPortion = (amo) =>{
-       console.log(amo)
        setAddAmount(amo.toString())
     }
 

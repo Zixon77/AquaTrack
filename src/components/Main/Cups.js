@@ -3,33 +3,38 @@ import React ,{useEffect, useState}from 'react'
 import colors from '../../assets/colors'
 import * as Progress from "react-native-progress"
 import store from '../../util/store'
-const Cups = () => {
+import {observer} from "mobx-react-lite"
 
-  const[waterLeft,setleft] = useState(store.amountLeft)
-  useEffect(() =>{
-    setleft(store.amountFilled)
-  },[store.amountFilled])
+const Cups =  observer( () => {
+  
+    useEffect(() =>{
+      if(store.temp)
+      {
+        store.incrementCups()
+      }
+  },[store.temp])
 
   return (
     <View style = {styles.container}>
       <View style = {styles.progress}>
         <Progress.Bar 
-        progress={0.25}
+        progress={store.amountCups/10}
         width={125}
         height={70}
         borderColor={colors.aero}
         color={colors.aero}
+        
         animated
         />
       </View>
       <View style = {styles.cups}>
-        <Text style = {styles.cupText}>3/6</Text>
+        <Text style = {styles.cupText}>{store.amountCups}/6</Text>
         <Text style = {styles.cupText}>Cups</Text>
       </View>
       
     </View>
   )
-}
+});
 
 export default Cups
 
