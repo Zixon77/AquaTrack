@@ -1,13 +1,25 @@
-import { StyleSheet, Text, View ,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput ,Keyboard, TouchableWithoutFeedback} from 'react-native'
 import React from 'react'
 import colors from '../../assets/colors'
 import { Icon } from '@rneui/themed/dist'
 
-const Goal = () => {
-  return (
-    <TouchableOpacity activeOpacity={0.8} style = {styles.container}>
+
+/*
+ <TouchableOpacity activeOpacity={0.8} style = {styles.container}>
       <Text style = {styles.text}>Change Daily Goal</Text>
     </TouchableOpacity >
+    */
+const Goal = () => {
+  return (
+    <View style = {styles.container}> 
+      <TextInput
+       style = {styles.input}
+        keyboardType='number-pad'
+        placeholder='Change Daily Goal'
+        placeholderTextColor={colors.aero}
+        clearTextOnFocus = {true}
+    />
+    </View>
   )
 }
 
@@ -23,10 +35,11 @@ const styles = StyleSheet.create({
         borderRadius:10,
         marginVertical:"3%",
     },
-    text:{
+    input:{
         color:colors.aero,
         fontWeight:'bold',
       
     }
+
   
 })
