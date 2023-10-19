@@ -7,20 +7,18 @@ import Main from './src/screens/Main';
 import Add from './src/components/Main/Add';
 import Analytics from './src/screens/Analytics';
 import colors from './src/assets/colors';
-
+import Settings from './src/screens/Settings';
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
-//This is anothe rtest
+
+//Temp
 const MainStack = () =>{
   return(
-    <Stack.Navigator initialRouteName='Main' screenOptions={{headerShown:false}}>
+    <Stack.Navigator initialRouteName='Main' screenOptions={{headerShown:false,
+    animation:"fade_from_bottom",}}>
     <Stack.Screen
       name = "Main"
       component={Main}
-    />
-    <Stack.Screen
-      name = "Add"
-      component={Add}
     />
   </Stack.Navigator>
   )
@@ -29,11 +27,11 @@ const MainStack = () =>{
 const Tabs = () =>{
   return(
     <Tab.Navigator screenOptions={{headerShown:false,tabBarStyle:{backgroundColor:colors.prusBlue,borderTopWidth:0},
-    tabBarActiveTintColor:colors.aero,tabBarLabelStyle:{fontSize:13}}} >
+    tabBarActiveTintColor:colors.aero,tabBarLabelStyle:{fontSize:13}  }} >
         <Tab.Screen
         options={{tabBarIcon : ({color,size}) =>(<Icon name= 'home' color={colors.aero} size={25}/>)}}
           name = "Home"
-          component={MainStack}
+          component={Main}
         />
         <Tab.Screen
          options={{tabBarIcon : ({color,size}) =>(<Icon name= 'analytics' type=' MaterialIcons' color={colors.aero} size={25}/>)}}
@@ -48,15 +46,19 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Navigator screenOptions={{headerShown:false,animation:"fade_from_bottom",gestureEnabled:false}}>
           <Stack.Screen
           name = "Tabs"
           component={Tabs}
           />
-          <Stack.Screen 
-            name = "Add"
-            component={Add}
-          />
+         <Stack.Screen
+          name = "Settings"
+          component={Settings}
+        />
+        <Stack.Screen
+        name = "Add"
+        component={Add}
+       />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

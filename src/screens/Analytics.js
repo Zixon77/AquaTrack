@@ -5,12 +5,14 @@ import DailySummary from '../components/Analytics/DailySummary';
 import Pie from '../components/Analytics/Pie';
 import Data from '../components/Analytics/Data';
 import Graphs from '../components/Analytics/Graphs';
-//Daily Intake Summary
-//Weekly / Monthly Progress
-//Goals and Targets
-//Visual Charts and Graphs: Bar graphs, line graphs, pie charts
+//Daily / Weekly / Monthly Intake Summary
+//Goals and Target Progress
+//Hydration statistics
+//Data export
+//Hydration History
 //Milestones and achievements
-//Education + recommendations
+//Education + recommendations (insights and advice)
+//Visual Charts and Graphs: Bar graphs, line graphs, pie charts
 
 
 const Analytics = () => {
