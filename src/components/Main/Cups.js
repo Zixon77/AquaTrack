@@ -12,8 +12,6 @@ const Cups = () => {
 
   return (
     <View style = {styles.container}>
-      <Text style = {styles.header}>Cups {store.amountFilled}</Text>
-
       <View style = {styles.progress}>
         <Progress.Bar 
         progress={0.25}
@@ -70,6 +68,6 @@ const styles = StyleSheet.create({
     cupText:{
       color:colors.aero,
       fontWeight:'bold',
-      fontSize:20
+      fontSize:23
     }
 })

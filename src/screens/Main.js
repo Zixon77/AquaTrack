@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor:colors.polyBlue,
   },
   title:{
-    fontSize:22,
+    fontSize:25,
     fontWeight:"bold",
     marginVertical:'7%',
     color:"white"
