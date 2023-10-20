@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import { Keyboard, SafeAreaView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import fullDate from '../util/Main/getDate'
@@ -16,6 +16,7 @@ const Main = () => {
     <>
    <SafeAreaView backgroundColor = {colors.polyBlue}/>
    <StatusBar style='light'/>
+   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
     <View style = {styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate("Settings")} style = {styles.settings}>
         <Icon name = "settings" color={colors.aero} size={35} />
@@ -33,6 +34,7 @@ const Main = () => {
           </View>
         </View>
     </View>
+    </TouchableWithoutFeedback>
     </>
   )
 }

@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
     cupText:{
       color:colors.aero,
       fontWeight:'bold',
-      fontSize:20
+      fontSize:23
     }
 })
