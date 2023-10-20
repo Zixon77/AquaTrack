@@ -4,7 +4,7 @@ import store from '../../util/store'
 import colors from '../../assets/colors'
 import {useNavigation} from "@react-navigation/native"
 import { TouchableWithoutFeedback,Keyboard } from 'react-native'
-import Portion from './Add/Portion'
+import Portion from '../../components/Main/Add/Portion'
 
 const Add = (props) => {
 
@@ -42,7 +42,7 @@ const Add = (props) => {
             <Text style = {styles.text}>fl oz</Text>
           </View>
         <View style = {styles.row}>
-         <Portion onPress = {addPortion} name = "cup" amount = {16}/>
+         <Portion onPress = {addPortion} name = "cup" amount = {8}/>
          <Portion onPress = {addPortion}  name = "bottle-soda-classic" amount = {32}/>
         </View>
         <View style = {styles.row}>
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
       fontWeight:"bold",
       position:"absolute",
       top:"1%",
-      alignSelf:"flex-start",
       margin:"5%"
     },
     input:{

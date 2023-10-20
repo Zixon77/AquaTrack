@@ -2,8 +2,10 @@ import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import store from '../../util/store'
 import colors from '../../assets/colors'
+import { useNavigation } from '@react-navigation/native'
 const LastEntry = () => {
 
+  const navigation = useNavigation()
   const [time,setTime] = useState(new Date().toLocaleTimeString())
   useEffect( () =>{
     const intervalId = setInterval(() => {
@@ -13,7 +15,7 @@ const LastEntry = () => {
   },[])
 
   return (
-    <TouchableOpacity activeOpacity={0.75} style = {styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate("Logs")} activeOpacity={0.75} style = {styles.container}>
       <Text style = {styles.header}>Last Log</Text>
       <Text style = {styles.time}>{store.addTime}</Text>
       <Text style = {styles.amount}>{store.addWater} fl oz</Text>

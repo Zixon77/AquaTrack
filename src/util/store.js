@@ -6,6 +6,7 @@ class AppStore {
     }
   
     // Define your state variables and actions here
+    dateArray = [];
     addTime = new Date().toLocaleTimeString()
     addWater = 0;
     waterInputted = false;
@@ -15,6 +16,8 @@ class AppStore {
 
     storeTime(time) {
       this.addTime = time;
+      const amount = this.addWater;
+      this.dateArray.push({time: this.addTime,amount:this.addWater })
     }
 
     storeAdd(water){

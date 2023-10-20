@@ -4,10 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from '@rneui/themed';
 import Main from './src/screens/Main';
-import Add from './src/components/Main/Add';
+import Add from './src/screens/Main/Add';
 import Analytics from './src/screens/Analytics';
 import colors from './src/assets/colors';
 import Settings from './src/screens/Settings';
+import Logs from './src/screens/Main/Logs';
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 
@@ -15,11 +16,15 @@ const Tab = createBottomTabNavigator()
 const MainStack = () =>{
   return(
     <Stack.Navigator initialRouteName='Main' screenOptions={{headerShown:false,
-    animation:"fade_from_bottom",}}>
+    animation:"default",}}>
     <Stack.Screen
       name = "Main"
       component={Main}
     />
+    <Stack.Screen
+      name = "Logs"
+      component={Logs}
+     />
   </Stack.Navigator>
   )
 }
@@ -31,7 +36,7 @@ const Tabs = () =>{
         <Tab.Screen
         options={{tabBarIcon : ({color,size}) =>(<Icon name= 'home' color={colors.aero} size={25}/>)}}
           name = "Home"
-          component={Main}
+          component={MainStack}
         />
         <Tab.Screen
          options={{tabBarIcon : ({color,size}) =>(<Icon name= 'analytics' type=' MaterialIcons' color={colors.aero} size={25}/>)}}
